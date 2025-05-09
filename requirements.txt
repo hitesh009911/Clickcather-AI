@@ -2,7 +2,7 @@ beautifulsoup4
 Flask
 googlesearch-python
 pandas
-python_dateutil
+python-dateutil
 requests
 scikit-learn
 whois

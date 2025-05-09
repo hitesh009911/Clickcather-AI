@@ -1,9 +1,10 @@
+flask
+flask-cors
 beautifulsoup4
-Flask
-googlesearch-python
 pandas
-python-dateutil
-requests
 scikit-learn
+requests
 whois
+python-dateutil
+googlesearch-python
 gunicorn

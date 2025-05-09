@@ -1,17 +1,13 @@
-# Use Python 3.10 (not 3.12)
-FROM python:3.10-slim
+FROM python:3.11-slim
 
 WORKDIR /app
 
-# Install build tools for scikit-learn
-RUN apt-get update && apt-get install -y build-essential python3-dev
+COPY . /app
 
-COPY requirements.txt requirements.txt
-
-# Upgrade pip/setuptools & install requirements
-RUN pip install --upgrade pip setuptools wheel
+# Install dependencies
+RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-COPY . .
+EXPOSE 5000
 
-CMD ["gunicorn", "-b", "0.0.0.0:5000", "app:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
